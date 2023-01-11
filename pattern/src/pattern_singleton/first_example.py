@@ -8,5 +8,9 @@ class Singleton(object):
 instance1 = Singleton()
 instance2 = Singleton()
 
-print(f"INstância 1, id: {id(instance1)}")
-print(f"INstância 2, id: {id(instance2)}")
+print(
+    f"INstância 1, id: {id(instance1)}"
+)
+print(
+    f"INstância 2, id: {id(instance2)}"
+)
