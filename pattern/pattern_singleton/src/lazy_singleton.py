@@ -8,8 +8,7 @@ class LazySingleton(object):
         if not LazySingleton._instance:
             print("Object Not instanced")
         else:
-            print(self.get_instance(),
-                  '\nIs Instanced Object')
+            print(self.get_instance(),'\nIs Instanced Object')
 
     @classmethod
     def get_instance(cls):
