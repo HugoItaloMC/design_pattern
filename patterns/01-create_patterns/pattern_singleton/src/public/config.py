@@ -1,6 +1,7 @@
 from metasingle import Singleton
 import sqlite3
 
+
 class DataBase(metaclass=Singleton):
 
     connection = None
