@@ -1,9 +1,8 @@
 from concrets.schemas_concret import EstoqueVestuario, EstoqueCalcados
-
-class Estoque:
+from abs.meta_single import Singleton
+class Estoque(metaclass=Singleton):
 
     def cadastro(self):
         for line in [EstoqueVestuario(), EstoqueCalcados()]:
             self.line = line
             self.cadastrar = self.line.cadastrar_produto()
-            self.escolher = self.line.escolher_produto()

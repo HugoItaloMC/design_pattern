@@ -3,8 +3,4 @@ from system.cadastro_produtos import Estoque
 
 # Cadastro de Produtos (TDD)
 estoque = Estoque()
-estoque.cadastrar
-
-
-
-# Escolha de Produto (Carrinho)
+estoque.cadastro()

@@ -5,7 +5,10 @@ from concrets.models_concret import Camisa, Tenis
 class EstoqueCalcados(ProdutoFactory):
 
     def cadastrar_produto(self):
-        return Tenis()
+        nome = input(':: Nome : ')
+        preco = float(input(':: Preco : '))
+        tamanho = input(':: Tamanho : ')
+        return Tenis(nome, preco, tamanho)
 
     def escolher_produto(self):
         return (...)
@@ -14,7 +17,10 @@ class EstoqueCalcados(ProdutoFactory):
 class EstoqueVestuario(ProdutoFactory):
 
     def cadastrar_produto(self):
-        return Camisa()
+        nome = input(':: Nome : ')
+        preco = float(input(':: Preco : '))
+        tamanho = input(':: Tamanho : ')
+        return Camisa(nome, preco, tamanho)
 
     def escolher_produto(self):
         return (...)
