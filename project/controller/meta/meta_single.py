@@ -1,5 +1,8 @@
 from typing import Dict
 
+# Controle de instâncias de objetos
+
+
 class Singleton(type):
 
     __instance: Dict = {}

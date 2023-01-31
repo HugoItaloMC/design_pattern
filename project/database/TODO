@@ -1,0 +1,4 @@
+CAMADA DATABASE
+
+  A camada DataBase é uma camada `MODELS` mais detalhada e granulada, contendo  configuracão de conexão
+com o DB, modelos abstratos e modelos concretos.
