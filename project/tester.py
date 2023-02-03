@@ -1,4 +1,4 @@
-from master import Cadastro
+from project.controller.api import Cadastro
 
 # PROCESSO TDD
 

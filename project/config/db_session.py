@@ -1,4 +1,4 @@
-from controller.meta.meta_single import Singleton
+from meta.meta_single import Singleton
 import sqlite3
 
 # Configuracão com o banco de dados
@@ -18,7 +18,6 @@ class DataBase(metaclass=Singleton):
                 self.db.commit()
             except Exception as err:
                 raise f":: Error as {err} Try new query content now ##"
-                DataBase.session()
             finally:
                 self.db.close()
         return DataBase.db()

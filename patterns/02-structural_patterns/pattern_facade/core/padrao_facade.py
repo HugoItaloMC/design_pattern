@@ -2,7 +2,7 @@
 class GerenciamentoEventos:
 
     def __init__(self):
-        print('GerenciamentoEventos :: Vou organizar com todo mundo!\n\n')
+        print('GerenciamentoEventos :: Vou organizar com TODO mundo!\n\n')
     
     def organizar(self):
         self.salao = SalaoFestas()
