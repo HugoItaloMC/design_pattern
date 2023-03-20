@@ -7,7 +7,8 @@ from config.db_session import  DataBase
 class Produto(metaclass=ABCMeta):
 
 
-    def __init__(self, first_name: str, mind_name: str, last_name: str, price: float, size: str):
+    def __init__(self, first_name: str, mind_name: str,
+                 last_name: str, price: float, size: str):
 
         self.first_name = first_name
         self.mind_name = mind_name

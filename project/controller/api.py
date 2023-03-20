@@ -34,11 +34,25 @@ class API(APIMeta):
         self.produto.manager('POST')
         self.redirect('index.html')
 
-    def _put(self):
-        ...
+    def _put(self, id):
+        Index.renderizer('atualizar.html')
 
-    def _get_an(self):
-        ...
+        nome = self.get_argument('...', None)
+        marca = self.get_argument('...', None)
+        modelo = self.get_argument('...', None)
+        preco = self.get_argument('...', None)
+        tamanho = self.get_argument('...', None)
 
-    def _get(self):
-        ...
+        produto = Calcados.get_an(id)
+        produto.first_name = nome
+        produto.mind_name = marca
+        produto.last_name = modelo
+        produto.price = preco
+        produto.size = tamanho
+
+        produto.manager('PUT')
+        self.redirect('index.html')
+
+    def _remove(self, id):
+        produto = Calcados.get_an(id)
+        produto.manager('DELETE')
