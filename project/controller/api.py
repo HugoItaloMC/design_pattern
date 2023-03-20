@@ -1,8 +1,8 @@
 from abc import ABC
 
-from ..models.model import Calcados
-from ..interfaces.pagine import APIMeta, Page
-from ..interfaces.single import Singleton
+from models.model import Calcados
+from interfaces.pagine import APIMeta, Page
+
 
 class Index(Page):
 
@@ -15,10 +15,10 @@ class Index(Page):
         self.render('index.html', produto=produto)
 
 
-class API(APIMeta, metaclass=Singleton):
+class API(APIMeta):
 
     def _post(self):
-        Index.renderizer('novo_html')
+        Index.renderizer('novo.html')
 
         nome = self.get_argument('...', None)
         marca = self.get_argument('...', None)
@@ -32,7 +32,7 @@ class API(APIMeta, metaclass=Singleton):
                                 price=float(preco),
                                 size=tamanho)
         self.produto.manager('POST')
-        self.redirect('/')
+        self.redirect('index.html')
 
     def _put(self):
         ...

@@ -1,4 +1,4 @@
-from meta.meta_single import Singleton
+from interfaces.single import Singleton
 import sqlite3
 
 # Configuracão com o banco de dados

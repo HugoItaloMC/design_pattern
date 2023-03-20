@@ -1,26 +1,22 @@
-from project.interfaces.label import Produto
+from interfaces.label import Produto
 from config.db_session import DataBase
 
 import json
 # Módulo de Criacão de dados (Dados Brutos, Modelos)
 
 
-
-
 class Calcados(Produto):
-
-
 
     def poster(self):
         _query = f'INSERT INTO calcados (first_name, mind_name, last_name, price, size) VALUES("{self.first_name}", "{self.mind_name}", "{self.last_name}", {float(self.price)}, "{self.size}")'
         DataBase.session(_query)
 
     def updater(self):
-        _query = 'SQL DML'
+        _query = 'SQL DML (...)'
         DataBase.session(_query)
 
     def remover(self):
-        _query = 'SQL DML'
+        _query = 'SQL DML (...)'
         DataBase.session(_query)
 
     def getall(self):

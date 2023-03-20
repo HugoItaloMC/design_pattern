@@ -4,7 +4,7 @@ PROJETO CASO DE ESTUDOS PARA APLICAR ESTUDO DE PADRÕES DE PROJETOS:
   -  Entidades (Modelos)
   -  Transisão de dados (schemas)
   -  Controles de servicos em dados (controller)
-  -  Apresentacão e manipulacão de dados (views)
+  -  Apresentacão e manipulacão de dados (views/routes)
 
    Cada camada do projeto vai ter seus sub-diretórios contendo seus respectivos módulos, pretendo
 nomear os diretórios, módulos, classes e métodos com maior abstracão possível, para assim atender

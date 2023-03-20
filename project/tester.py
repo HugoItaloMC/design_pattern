@@ -1,6 +1,6 @@
-from project.controller.api import Cadastro
+from controller.api import API
 
 # PROCESSO TDD
 
 # CADASTRO DE PRODUTOS
-Cadastro().manager()
+API().manager()

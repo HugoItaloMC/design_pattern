@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block head %}
+    <title>Listagem de Produtos</title>
+{% end %}
+{% block body %}
+    {% if produtos %}
+        <h3>Produtos</h3>
+        <table class="table">
+            <tr>
+                <td>ID</td>
+                <td>Nome</td>
+                <td>Preço</td>
+                <td>Status</td>
+                <td>Atualizar</td>
+                <td>Deletar</td>
+            </tr>
+            {% for produto in produtos %}
+                <tr>
+                    <td>{{ produto[0] }}</td>
+                    <td>{{ produto[1] }}</td>
+                    <td>{{ produto[2] }}</td>
+
+                    {% if produto[3] %}
+                        <td>Ativo</td>
+                    {% else %}
+                        <td>Inativo</td>
+                    {% end %}
+
+                    {% if produto[3] %}
+                        <td><a class="btn btn-warning" href="/produto/update/{{ produto[0] }}/status/0">Inativar</a></td>
+                    {% else %}
+                    <td><a class="btn btn-success" href="/produto/update/{{ produto[0] }}/status/1">Ativar</a></td>
+                    {% end %}
+                    <td><a class="btn btn-danger" href="/produto/delete/{{ produto[0] }}">Deletar</a></td>
+                </tr>
+            {% end %}
+        </table>
+    {% else %}
+        <h3>Ainda não existem produtos cadastrados.</h3>
+    {% end %}
+    <div>
+        <h3><a class="btn btn-primary" href="/produto/novo">Adicionar Produto</a></h3>
+    </div>
+{% end %}
