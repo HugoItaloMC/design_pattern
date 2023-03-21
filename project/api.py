@@ -1,6 +1,4 @@
-from abc import ABC
-
-from models.model import Calcados
+from model import Calcados
 from interfaces.pagine import APIMeta, Page
 
 
@@ -18,7 +16,8 @@ class Index(Page):
 class API(APIMeta):
 
     def _post(self):
-        Index.renderizer('novo.html')
+        render_ = Index()
+        render_.renderizer('new.html')
 
         nome = self.get_argument('...', None)
         marca = self.get_argument('...', None)
@@ -26,16 +25,16 @@ class API(APIMeta):
         preco = self.get_argument('...', None)
         tamanho = self.get_argument('...', None)
 
-        self.produto = Calcados(first_name=nome,
+        produto = Calcados(first_name=nome,
                                 mind_name=marca,
                                 last_name=modelo,
                                 price=float(preco),
                                 size=tamanho)
-        self.produto.manager('POST')
+        produto.manager('POST')
         self.redirect('index.html')
 
     def _put(self, id):
-        Index.renderizer('atualizar.html')
+        Index.renderizer('update.html')
 
         nome = self.get_argument('...', None)
         marca = self.get_argument('...', None)
@@ -56,3 +55,4 @@ class API(APIMeta):
     def _remove(self, id):
         produto = Calcados.get_an(id)
         produto.manager('DELETE')
+        self.redirect('index.html')

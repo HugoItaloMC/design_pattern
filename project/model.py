@@ -40,7 +40,7 @@ class Calcados(Produto):
                 Calcados()
     def __iter__(self):
         yield from{
-            "id": self.enii
+            "id": self.id,
             "Make": (self.first_name + self.mind_name + self.last_name),
             "price": self.price,
             "size": self.size

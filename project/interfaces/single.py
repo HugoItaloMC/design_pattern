@@ -1,10 +1,9 @@
 from typing import Dict
 
-# Controle de instâncias de objetos
-
 
 class Singleton(type):
 
+    # Controle de instâncias de objetos
     __instance: Dict = {}
 
     def __call__(cls, *args, **kwargs):
