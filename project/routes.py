@@ -1,14 +1,14 @@
 from tornado.web import Application
-from api import API, Index
+from factory import Home, Post, Put, Delete
 
 class Routes(Application):
     def __init__(self):
 
         handlers = [
-            ('/home', Index),
-            ('/produto/new', API._post),
-            ('/produto/update/(\d+)/id/(\d+)', API._put),
-            ('/produto/delete/(\d+)', API._remove)
+            ('/home', Home),
+            ('/produto/new', Post),
+            ('/produto/update/(\d+)/id/(\d+)', Put),
+            ('/produto/delete/(\d+)', Delete)
         ]
 
         settings = dict(

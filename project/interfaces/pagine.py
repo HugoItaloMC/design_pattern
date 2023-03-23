@@ -4,11 +4,6 @@ from abc import ABCMeta, abstractmethod
 class Page(RequestHandler, metaclass=ABCMeta):
 
     @abstractmethod
-    def renderizer(self, *args, **kwargs):
-        # Buscar Template Para renderizar
-        (...)
-
-    @abstractmethod
     def service(self):
         # Atribuir Servicos
         (...)
@@ -24,9 +19,5 @@ class APIMeta(RequestHandler, metaclass=ABCMeta):
         (...)
 
     @abstractmethod
-    def _get_an(self):
-        (...)
-
-    @abstractmethod
-    def _get(self):
-        (...)
+    def _remove(self):
+        ...
