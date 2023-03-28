@@ -18,13 +18,22 @@ class Calcados(Produto):
     def remover(self):
         _query = f'DELETE FROM calcados WHERE id={self.id}'
         DataBase.session(_query)
-
-    def getall(self):
+    @staticmethod
+    def getall():
         _query = 'SELECT * FROM calcados'
         DataBase.session(_query)
-
-    def get_an(self, id):
+    @staticmethod
+    def get_an(id):
         _query = f'SELECT * FROM calcados WHERE id={id}'
+        produto = DataBase.session(_query)[0]
+        produto = Calcados(id=produto[0],
+                           first_name=produto[1],
+                           mind_name=produto[2],
+                           last_name=produto[3],
+                           price=produto[4],
+                           size=produto[5]
+                           )
+        return produto
 
     def manager(self, opp: str):
         while op := opp != None:
@@ -37,7 +46,7 @@ class Calcados(Produto):
             elif op == 'GETS':
                 Calcados.getall(self)
             else:
-                Calcados()
+                ...
     def __iter__(self):
         yield from{
             "id": self.id,
